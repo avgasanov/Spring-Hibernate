@@ -22,10 +22,13 @@ public class MainDemoApp {
 		
 		
 		// call the business method
-		theAccount.addAccount();
+		Account myAccount = new Account();
+		theAccount.addAccount(myAccount, true);
+		theAccount.doWork();
 		
 		// call the membership business method
 		theMembershipDAO.addSillyMember();
+		theMembershipDAO.goToSleep();
 		
 		// close the context
 		context.close();
