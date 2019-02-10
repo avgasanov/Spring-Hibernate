@@ -26,6 +26,23 @@
 	
 	<hr>
 	
+	<security:authorize access="hasRole('MANAGERS')">
+		<p>
+			<a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a>
+			(Only for Manager peers)
+		</p>
+	</security:authorize>
+	
+	
+	
+	<security:authorize access="hasRole('ADMIN')">
+		<p>
+			<a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a>
+			(Only for Admin peers)
+		</p>
+	</security:authorize>
+
+	
 	<form:form action="${pageContext.request.contextPath}/logout"
 				method="POST">
 				
